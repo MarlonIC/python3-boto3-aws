@@ -1,6 +1,6 @@
 import json
 
-request_ids = [
+ids = [
     55235, 55234, 55233, 55232, 55231, 55230, 55229, 55228, 55227, 55226, 55225, 55224, 55223, 55222, 55221, 55220,
     55219, 55218, 55217, 55216, 55215, 55214, 55213, 55212, 55211, 55210, 55209, 55208, 55207, 55206, 55205, 55204,
     55203, 55202, 55201, 55200, 55199, 55198, 55197, 55196, 55195, 55194, 55193, 55192, 55191, 55190, 55189, 55188,
@@ -15,15 +15,15 @@ request_ids = [
 ]
 
 sample = {
-    'requestId': '',
-    'ttl': 1638910054,
+    'id': '',
+    'code': 1638910054,
     'messageId': '33113404796703574316',
-    'status': 'DELIVERED_TO_HANDSET'
+    'status': 'sent successfully'
 }
 data = []
 
-for request_id in request_ids:
-    sample['requestId'] = str(request_id)
+for _id in ids:
+    sample['id'] = str(_id)
     data.append(sample.copy())
 
 json_object = json.dumps(data, indent=4)

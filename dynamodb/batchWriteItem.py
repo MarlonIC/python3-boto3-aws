@@ -2,10 +2,16 @@ import boto3
 import json
 import os
 from math import ceil
-import collections
+
+'''
+Insertar data de forma masiva (cada 25 registros) a una tabla de dynamodb con
+la función batch_writer() usando las credenciales configuradas en los archivos:
+    - ~/.aws/config
+    - ~/.aws/credentials
+'''
 
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('syndeo-dev-regularizations-sms')
+table = dynamodb.Table('table-dynamodb')
 number_max_save_dynamodb = 25
 
 try:
